@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+cloud:
+  aws:
+    region:
+      static: us-east-2
+    stack:
+      auto: false
+    credentials:
+      access-key: access-key
+      secret-key: secret-key
+    url_aws: https://sqs.us-east-2.amazonaws.com
+    fila:
+      compras_solicitadas: compras_solicitadas
+      url_compras_solicitadas: https://sqs.us-east-2.amazonaws.com/910113391939/compras_solicitadas
+      solicitacoes_compras_aprovadas: solicitacoes_compras_aprovadas
+      url_solicitacoes_compras_aprovadas: https://sqs.us-east-2.amazonaws.com/910113391939/solicitacoes_compras_aprovadas
+
+
+### Adicionado para corrigir erro:
+### com.amazonaws.SdkClientException: Failed to connect to service endpoint
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+
+
+
+
